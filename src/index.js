@@ -1,15 +1,19 @@
 const express = require('express');
 const cors = require('cors');
-// const bodyParser = require('body-parser');
+
 require('dotenv').config();
 
 const app = express();
 const port = 5000;
 
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+  });
+
 app.use(cors({
     origin: 'http://localhost:5173', 
   }));
-// app.use(bodyParser.json());
+
 app.use(express.json());
 
 
